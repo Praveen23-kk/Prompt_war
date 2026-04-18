@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+:root {
+  --background: #0e0e0e;
+  --foreground: #ffffff;
+
+  --card: #131313;
+  --card-foreground: #ffffff;
+
+  --popover: #1a1919;
+  --popover-foreground: #ffffff;
+
+  --primary: #cf96ff;
+  --primary-foreground: #480079;
+
+  --secondary: #c3f400;
+  --secondary-foreground: #455900;
+
+  --muted: #201f1f;
+  --muted-foreground: #adaaaa;
+
+  --accent: #c683ff;
+  --accent-foreground: #37005f;
+
+  --destructive: #ff6e84;
+  --destructive-foreground: #490013;
+
+  --border: #494847;
+  --input: #1a1919;
+  --ring: #cf96ff;
+
+  --radius: 0.125rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: 'Manrope', system-ui, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+  --font-display: 'Epilogue', system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  background-image: radial-gradient(circle at 100% 0%, rgba(207, 150, 255, 0.05) 0%, transparent 60%),
+                    radial-gradient(circle at 0% 100%, rgba(195, 244, 0, 0.05) 0%, transparent 60%);
+  min-height: 100vh;
+}
+
+/* Glassmorphism utilities */
+.glass-panel {
+  background: rgba(21, 21, 27, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glow-primary {
+  box-shadow: 0 0 20px rgba(165, 51, 255, 0.15); /* primary_dim glow */
+}
+
+.glow-secondary {
+  box-shadow: 0 0 20px rgba(195, 244, 0, 0.15);
+}
+
+/* Detective Scanline effect */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 50;
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+}
