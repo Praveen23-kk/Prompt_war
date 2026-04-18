@@ -20,12 +20,12 @@ pip install -r requirements.txt
 2. Create `.env` from `.env.example` and set your API key:
 
 ```env
-OPENAI_API_KEY=sk-...
+OPENAI_API_KEY="API_KEY"
 MODEL=gpt-4o-mini
 OPENAI_BASE_URL=
 ```
 
-If you use an OpenRouter key (`sk-or-v1...`), set:
+If you use an OpenRouter key (`API_KEY`), set:
 
 ```env
 OPENAI_BASE_URL=https://openrouter.ai/api/v1
